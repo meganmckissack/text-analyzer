@@ -64,3 +64,23 @@ function numberOfOccurrencesInText(word, text) {
   });
   return wordCount;
 }
+
+//get passage value
+//convert passage to an array
+//iterate through the array to find how many matching words there are
+//determine the three most used words
+function mostUsedWords(text) {
+  const textArray = text.split(" ");
+  let map = {};
+  textArray.forEach(function(element) {
+    wordCount = 0
+    textArray.forEach(function(word) {
+      if(word === element) {
+        wordCount++
+      }
+    });
+    map[element] = wordCount;
+  });
+  console.log(map);
+}
+
