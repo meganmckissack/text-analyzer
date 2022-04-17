@@ -90,3 +90,11 @@ const word = "hello";
 const text = "hello there";
 boldPassage(word, text);
 Expected Output: "<p><b>hello</b> there</p>"
+
+Describe: mostUsedWords();
+
+Test: "It should return value for most commonly used word in a string"
+Code:
+const text = "donut donut donut half dozen coffee"
+mostUsedWords(text);
+Expected Output: donut

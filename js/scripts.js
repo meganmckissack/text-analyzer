@@ -1,7 +1,12 @@
 // Utility Logic
 
-function noInputtedWord(word, text) {
-  return ((text.trim().length ===0) || (word.trim().length === 0));
+function noInputtedWord() {
+  for (let i=0; i < arguments.length; i++) {
+    if (arguments[i].trim().length === 0) {
+      return true;
+    }
+  }
+  return false;
 }
 
 // UI Logic
@@ -38,7 +43,7 @@ function boldPassage(word, text) {
 
 //Business Logic
 function wordCounter(text) {
-  if (text.trim().length === 0) {
+  if (noInputtedWord(text)) {
     return 0;
   }
   let wordCount = 0;
@@ -69,7 +74,7 @@ function numberOfOccurrencesInText(word, text) {
 //convert passage to an array
 //iterate through the array to find how many matching words there are
 //determine the three most used words
-function mostUsedWords(text) {
+/*function mostUsedWords(text) {
   const textArray = text.split(" ");
   let map = {};
   textArray.forEach(function(element) {
@@ -82,5 +87,5 @@ function mostUsedWords(text) {
     map[element] = wordCount;
   });
   console.log(map);
-}
+}*/
 
